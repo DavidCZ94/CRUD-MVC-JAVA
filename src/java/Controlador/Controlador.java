@@ -62,7 +62,20 @@ public class Controlador extends HttpServlet {
             p.setNom(nom);
             dao.add(p);
             acceso = listar;
+        }else if(action.equalsIgnoreCase("editar")){
+            request.setAttribute("idPer", request.getParameter("id"));
+            acceso = adit;
+        }else if(action.equals("Actualizar")){
+            int id = Integer.parseInt(request.getParameter("txtId"));
+            int dni = Integer.parseInt(request.getParameter("txtDni"));
+            String nom = request.getParameter("txtNom");
+            p.setId(id);
+            p.setDni(dni);
+            p.setNom(nom);
+            dao.edit(p);
+            acceso = listar;
         }
+        
         RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
