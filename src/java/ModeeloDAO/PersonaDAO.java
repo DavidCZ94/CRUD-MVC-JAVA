@@ -56,7 +56,6 @@ public class PersonaDAO implements CRUD{
     @Override
     public boolean add(Persona per) {
         String sql = "insert into persona(DNI, Nombre)values('"+per.getDni()+"','"+per.getNom()+"')";
-        System.out.println(sql);
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
