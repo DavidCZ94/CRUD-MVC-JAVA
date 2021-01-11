@@ -13,7 +13,6 @@ public class Persona {
     int id;
     int dni;
     String nom;
-    String prueva = "Hellooooo";
     public Persona() {
     }
 

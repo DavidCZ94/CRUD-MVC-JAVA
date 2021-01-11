@@ -17,7 +17,7 @@
             ID: <br>
             <input type="text" name="txtDni"><br>
             Nombres: <br>
-            <input type="tect" name="txtNom"><br>
+            <input type="text" name="txtNom"><br>
             <input type="submit" name="accion" value="Agregar"><br>
         </form>
     </body>

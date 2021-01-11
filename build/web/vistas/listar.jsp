@@ -18,6 +18,7 @@
     <body>
         <div>
             <h1>Personas</h1>
+            <a href="Controlador?accion=add">Agregar nuevo usuario</a>
             <table border="1">
                 <thead>
                     <tr>

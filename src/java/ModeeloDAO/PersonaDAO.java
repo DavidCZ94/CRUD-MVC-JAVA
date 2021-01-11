@@ -55,7 +55,16 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean add(Persona per) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "insert into persona(DNI, Nombre)values('"+per.getDni()+"','"+per.getNom()+"')";
+        System.out.println(sql);
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error: " + e);
+        }
+        return false;
     }
 
     @Override
