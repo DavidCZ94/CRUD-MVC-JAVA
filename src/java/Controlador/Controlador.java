@@ -74,6 +74,11 @@ public class Controlador extends HttpServlet {
             p.setNom(nom);
             dao.edit(p);
             acceso = listar;
+        }else if(action.equalsIgnoreCase("eliminar")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            p.setId(id);
+            dao.eliminar(id);
+            acceso = listar;
         }
         
         RequestDispatcher vista = request.getRequestDispatcher(acceso);
