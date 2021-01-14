@@ -13,6 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/png" href="assets/javaIcon.png"/>
         <title>JSP Page</title>
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
@@ -27,17 +28,16 @@
         <div class="card w-75">
             <div class="card-body"> 
                 <p class="card-text">
-                    <div>
-                        <h1>Users</h1>
-                        <hr>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-striped">
+                    <h1>Users</h1>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>DNI</th>
-                                    <th>Nombre</th>
-                                    <th>Acciones</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">DNI</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <%
@@ -50,12 +50,12 @@
                             %>
                             <tbody>
                                 <tr>
-                                    <td><%= per.getId()%></td>
+                                    <td class="text-end h-100"><%= per.getId()%></td>
                                     <td><%= per.getDni()%></td>
                                     <td><%= per.getNom()%></td>
                                     <td>
-                                        <a class="btn btn-info" href="Controlador?accion=editar&id=<%= per.getId()%>">Editar</a>
-                                        <a class="btn btn-danger" href="Controlador?accion=eliminar&id=<%= per.getId()%>">Eliminar</a>
+                                        <a class="btn btn-info" href="Controller?accion=editar&id=<%= per.getId()%>">Edit</a>
+                                        <a class="btn btn-danger" href="Controller?accion=eliminar&id=<%= per.getId()%>">Delete</a>
                                     </td>
                                 </tr>
                                 <%
@@ -63,12 +63,12 @@
                                 %>
                             </tbody>
                         </table>
-                        </div>
                     </div>
                     <hr>
-                    <a class="btn btn-primary" href="Controlador?accion=add">Agregar nuevo usuario</a>
+                    <a class="btn btn-primary" href="Controller?accion=add">Add new user</a>
                 </p>
             </div>
+                            
         </div>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>

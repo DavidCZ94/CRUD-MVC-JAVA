@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/png" href="assets/javaIcon.png"/>
         <title>JSP Page</title>
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
@@ -31,8 +32,8 @@
                     Persona p = (Persona)dao.list(id);
                 %>
                 
-                <h1>Modificar usuario</h1>
-                <form action="Controlador">
+                <h1>Edit user</h1>
+                <form action="Controller">
                     <!-- ID input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="form5Example1" class="form-control" name="txtDni" value="<%= p.getDni()%>"/>
@@ -46,10 +47,10 @@
                     <!-- Hidden input -->
                     <input type="hidden" name="txtId" value="<%= p.getId()%>">
                     <div class="d-grid gap-2">
-                        <input class="btn btn-primary" type="submit" name="accion" value="Actualizar">
+                        <button class="btn btn-primary" type="submit" name="accion" value="Actualizar">Update</button>
                     </div>
                     <div class="d-grid gap-2">
-                        <a class="btn btn-info" href="Controlador?accion=listar">Regresar</a>
+                        <a class="btn btn-info" href="Controller?accion=listar">Back</a>
                     </div>
                 </form>
                 </p>

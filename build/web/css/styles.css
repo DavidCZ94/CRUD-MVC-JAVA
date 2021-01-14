@@ -6,10 +6,7 @@ body {
 .table{
     background-color: #3E4551;
     border-radius: 5px;
-}
-
-.table tbody{
-    border-radius: 5px;
+    display: table;
 }
 
 .btn {

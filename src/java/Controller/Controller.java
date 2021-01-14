@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Controller;
 
 import ModeeloDAO.PersonaDAO;
 import Modelo.Persona;
@@ -19,9 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author David Alberto
  */
-public class Controlador extends HttpServlet {
+public class Controller extends HttpServlet {
 
-    String listar = "vistas/listar.jsp";
+    String list = "vistas/listar.jsp";
     String add = "vistas/add.jsp";
     String adit= "vistas/edit.jsp";
     
@@ -49,22 +49,22 @@ public class Controlador extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("Entrando al metodo doget del controlador");
-        String acceso = "";
+        String acces = "";
         String action  = request.getParameter("accion");
         if ( action.equalsIgnoreCase("listar") ){
-            acceso = listar;
+            acces = list;
         } else if( action.equalsIgnoreCase("add") ){
-            acceso = add;
+            acces = add;
         }else if( action.equalsIgnoreCase("Agregar") ){
             int dni = Integer.parseInt(request.getParameter("txtDni"));
             String nom = request.getParameter("txtNom");
             p.setDni(dni);
             p.setNom(nom);
             dao.add(p);
-            acceso = listar;
+            acces = list;
         }else if(action.equalsIgnoreCase("editar")){
             request.setAttribute("idPer", request.getParameter("id"));
-            acceso = adit;
+            acces = adit;
         }else if(action.equals("Actualizar")){
             int id = Integer.parseInt(request.getParameter("txtId"));
             int dni = Integer.parseInt(request.getParameter("txtDni"));
@@ -73,15 +73,15 @@ public class Controlador extends HttpServlet {
             p.setDni(dni);
             p.setNom(nom);
             dao.edit(p);
-            acceso = listar;
+            acces = list;
         }else if(action.equalsIgnoreCase("eliminar")){
             int id = Integer.parseInt(request.getParameter("id"));
             p.setId(id);
             dao.eliminar(id);
-            acceso = listar;
+            acces = list;
         }
         
-        RequestDispatcher vista = request.getRequestDispatcher(acceso);
+        RequestDispatcher vista = request.getRequestDispatcher(acces);
         vista.forward(request, response);
     }
 

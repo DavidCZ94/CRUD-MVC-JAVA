@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/png" href="assets/javaIcon.png"/>
         <title>JSP Page</title>
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
@@ -23,8 +24,8 @@
         <div class="card w-75">
             <div class="card-body"> 
                 <p class="card-text">
-                    <h1>Agregar usuario</h1>
-                    <form action="Controlador">
+                    <h1>Add new user</h1>
+                    <form action="Controller">
                         <!-- ID input -->
                         <div class="form-outline mb-4">
                           <input type="text" id="form5Example1" class="form-control" name="txtDni"/>
@@ -36,7 +37,7 @@
                           <label class="form-label" for="form5Example2">Name:</label>
                         </div>
                         <div class="d-grid gap-2">
-                            <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
+                            <button  class="btn btn-primary" type="submit" name="accion" value="Agregar">Add User</button>
                         </div>
                   </form>
                 </p>
