@@ -1,0 +1,17 @@
+body {
+    background-color: #3E4551;
+    width: 100%;
+}
+
+.table{
+    background-color: #3E4551;
+    border-radius: 5px;
+}
+
+.table tbody{
+    border-radius: 5px;
+}
+
+.btn {
+    margin: 10px;
+}

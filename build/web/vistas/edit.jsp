@@ -12,24 +12,50 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet"/>
+        <!-- Own css -->
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        
-        <%
-            PersonaDAO dao = new PersonaDAO();
-            int id = Integer.parseInt((String)request.getAttribute("idPer"));
-            Persona p = (Persona)dao.list(id);
-        %>
-        
-        <h1>Modificar usuario</h1>
-        <form action="Controlador">
-            ID: <br>
-            <input type="text" name="txtDni" value="<%= p.getDni()%>"><br>
-            Nombres: <br>
-            <input type="text" name="txtNom" value="<%= p.getNom()%>"><br>
-            <input type="hidden" name="txtId" value="<%= p.getId()%>">
-            <input type="submit" name="accion" value="Actualizar"><br>
-            <a href="Controlador?accion=listar">Regresar</a>
-        </form>
+    <body class="text-center row align-items-center justify-content-center vh-100">
+        <div class="card w-75">
+            <div class="card-body"> 
+                <p class="card-text">
+                <%
+                    PersonaDAO dao = new PersonaDAO();
+                    int id = Integer.parseInt((String)request.getAttribute("idPer"));
+                    Persona p = (Persona)dao.list(id);
+                %>
+                
+                <h1>Modificar usuario</h1>
+                <form action="Controlador">
+                    <!-- ID input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form5Example1" class="form-control" name="txtDni" value="<%= p.getDni()%>"/>
+                        <label class="form-label" for="form5Example1">ID:</label>
+                    </div>
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form5Example2" class="form-control"  name="txtNom" value="<%= p.getNom()%>"/>
+                        <label class="form-label" for="form5Example2">Name:</label>
+                    </div>
+                    <!-- Hidden input -->
+                    <input type="hidden" name="txtId" value="<%= p.getId()%>">
+                    <div class="d-grid gap-2">
+                        <input class="btn btn-primary" type="submit" name="accion" value="Actualizar">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-info" href="Controlador?accion=listar">Regresar</a>
+                    </div>
+                </form>
+                </p>
+            </div>
+        </div>
+            
     </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
 </html>
