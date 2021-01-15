@@ -5,6 +5,7 @@
  */
 package Config;
 
+import Environments.Development;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -16,10 +17,16 @@ import java.sql.ResultSet;
  */
 public class Conexion {
     Connection con;
+    Development env = new Development();
+    String host = env.getHost();
+    String user = env.getUser();
+    String password = env.getPassword();
+    String table = env.getTable();
+    String url = "jdbc:mysql://" + host + "/" + table;
     public Conexion(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/registro", "root", "");
+            con = DriverManager.getConnection(url, user, password);
         } catch ( Exception e){
             System.err.println("Error:" + e);
         }
