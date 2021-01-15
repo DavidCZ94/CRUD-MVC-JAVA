@@ -42,8 +42,12 @@ public class PersonaDAO implements CRUD{
                 per.setNom(rs.getString("Nombre"));           
                 list.add(per);
             }
+            rs.close();
+            con.close();
+            System.out.println("Operation carried out successfully");
         }catch (Exception e){
             System.err.println("Error: " + e);
+            e.printStackTrace();
         }
         return list;
     }
@@ -63,8 +67,12 @@ public class PersonaDAO implements CRUD{
                 p.setDni(rs.getInt("DNI"));
                 p.setNom(rs.getString("Nombre"));  
             }
+            rs.close();
+            con.close();
+            System.out.println("Operation carried out successfully");
         }catch (Exception e){
             System.err.println("Error: " + e);
+            e.printStackTrace();
         }
         return p;
     }
@@ -76,8 +84,12 @@ public class PersonaDAO implements CRUD{
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
+            System.out.println("Operation carried out successfully");
+            rs.close();
+            con.close();
         } catch (Exception e) {
             System.err.println("Error: " + e);
+            e.printStackTrace();
         }
         return false;
     }
@@ -90,8 +102,12 @@ public class PersonaDAO implements CRUD{
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
+            System.out.println("Operation carried out successfully");
+            rs.close();
+            con.close();
         } catch (Exception e) {
             System.err.println("Error: " + e);
+            e.printStackTrace();
         }
         return false;
     }
@@ -103,8 +119,12 @@ public class PersonaDAO implements CRUD{
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
+            System.out.println("Operation carried out successfully");
+            rs.close();
+            con.close();
         } catch (Exception e) {
             System.err.println("Error: " + e);
+            e.printStackTrace();
         }
         return false;
     }

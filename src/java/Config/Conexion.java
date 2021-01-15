@@ -6,6 +6,7 @@
 package Config;
 
 import Environments.Development;
+import Environments.Production;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -17,10 +18,17 @@ import java.sql.ResultSet;
  */
 public class Conexion {
     Connection con;
+/*
     Development env = new Development();
     String user = env.getUser();
     String password = env.getPassword();
     String url = env.getUrl();
+*/  
+    Production prod = new Production();
+    String user = prod.getUser();
+    String password = prod.getPassword();
+    String url = prod.getUrl();
+    
     public Conexion(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
