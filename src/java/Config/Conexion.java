@@ -18,11 +18,9 @@ import java.sql.ResultSet;
 public class Conexion {
     Connection con;
     Development env = new Development();
-    String host = env.getHost();
     String user = env.getUser();
     String password = env.getPassword();
-    String table = env.getTable();
-    String url = "jdbc:mysql://" + host + "/" + table;
+    String url = env.getUrl();
     public Conexion(){
         try{
             Class.forName("com.mysql.jdbc.Driver");

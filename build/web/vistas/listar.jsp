@@ -43,6 +43,13 @@
                             <%
                                 PersonaDAO dao = new PersonaDAO();
                                 List<Persona>list = dao.listar();
+                                if( list.size() == 0 ){
+                            %>
+                            <script>
+                                alert("UPS !!!, It seems that there was an error trying to connect to the database, check your internet connection.");
+                            </script>
+                            <%
+                                }
                                 Iterator<Persona>iter = list.iterator();
                                 Persona per = null;
                                 while ( iter.hasNext() ){
