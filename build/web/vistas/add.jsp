@@ -29,12 +29,12 @@
                     <form action="Controller">
                         <!-- ID input -->
                         <div class="form-outline mb-4">
-                          <input type="text" id="form5Example1" class="form-control" name="txtDni"/>
+                          <input type="text" id="form5Example1" class="form-control" name="txtDni" required/>
                           <label class="form-label" for="form5Example1">ID:</label>
                         </div>
                         <!-- Name input -->
                         <div class="form-outline mb-4">
-                          <input type="text" id="form5Example2" class="form-control"  name="txtNom"/>
+                          <input type="text" id="form5Example2" class="form-control"  name="txtNom" required/>
                           <label class="form-label" for="form5Example2">Name:</label>
                         </div>
                         <div class="d-grid gap-2">

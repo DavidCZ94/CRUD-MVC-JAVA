@@ -37,12 +37,12 @@
                 <form action="Controller">
                     <!-- ID input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form5Example1" class="form-control" name="txtDni" value="<%= p.getDni()%>"/>
+                        <input type="text" id="form5Example1" class="form-control" name="txtDni" value="<%= p.getDni()%>" required/>
                         <label class="form-label" for="form5Example1">ID:</label>
                     </div>
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form5Example2" class="form-control"  name="txtNom" value="<%= p.getNom()%>"/>
+                        <input type="text" id="form5Example2" class="form-control"  name="txtNom" value="<%= p.getNom()%>" required/>
                         <label class="form-label" for="form5Example2">Name:</label>
                     </div>
                     <!-- Hidden input -->
