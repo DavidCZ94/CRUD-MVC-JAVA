@@ -4,7 +4,7 @@ This is a practice where the Model-view-controller software design pattern is im
 
 ## Usage
 
-You can explore the operation of the application in the following link.
+You can explore the operation of the application in the following link https://crud-mvc-java.herokuapp.com/.
 
 To run this app you must download de project and open the project in some NetBeans, Eclipse or IntelliJ IDEA.
  
