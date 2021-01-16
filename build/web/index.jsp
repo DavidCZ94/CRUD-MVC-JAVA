@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href="assets/javaIcon.png"/>
         <title>JSP Page</title>
         <!-- Font Awesome -->
@@ -15,7 +16,7 @@
         <!-- Own css -->
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body class="text-center row align-items-center justify-content-center vh-100">
+    <body class="text-center row align-items-center justify-content-center vh-100" id="bodyContainer">
         <div class="card w-75">
             <div class="card-body"> 
                 <h5 class="card-title">CRUD Model–view–controller in Java</h5>
