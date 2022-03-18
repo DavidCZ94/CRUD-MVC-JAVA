@@ -1,4 +1,4 @@
-# Tetris
+# CRUD MVC JAVA
 
 This is a practice where the Model-view-controller software design pattern is implemented applied to a crud (create-read-update-delete) to a user database, this application has been developed in Java EE.
 
